@@ -6,7 +6,7 @@ let weather = {
     apiKey: "f6fe9d66482e0fbd69d8ee49e3ec5590",
     fetchWeather: function (city) {
         fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
-            + city 
+            + city
             + "&units=imperial&appid=" 
             + this.apiKey
         )
@@ -15,10 +15,12 @@ let weather = {
     },
     displayWeather: function(data) {
         const { name } = data;
+        const { country } = data.sys;
         const { icon, description } = data.weather[0];
         const { temp, humidity } = data.main;
-        const { speed } = data.wind;
-        document.querySelector(".city").innerText = "Weather in " + name;
+        const { speed, } = data.wind;
+        document.querySelector(".city").innerText = "Weather in " + name + ",";
+        document.querySelector(".country").innerText = country;
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon +".png";
         document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = temp + "°F";

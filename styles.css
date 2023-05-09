@@ -71,6 +71,10 @@ h1.temp{
     margin-left: 0px;
 }
 
+.city__state{
+    display: flex;
+}
+
 .weather.loading{
     visibility: hidden;
     max-height: 20px;
