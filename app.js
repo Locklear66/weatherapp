@@ -40,4 +40,4 @@ document.querySelector(".search__bar").addEventListener("keyup", function (event
         weather.search()
     }
 });
-weather.fetchWeather("Denver")
+weather.fetchWeather("New York")
